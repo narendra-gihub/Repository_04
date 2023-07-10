@@ -5,6 +5,7 @@ public class accountController {
     }
     @AuraEnabled
     public static List<Contact> getContacts(String accId) {
+        System.System.debug('accId===>+accId');
         return [SELECT Id, FirstName, LastName, Email, Phone from Contact where AccountId = :accId];
     }
 }
